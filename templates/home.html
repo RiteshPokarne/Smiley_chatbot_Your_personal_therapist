@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel_Chatbot{{inp}}</title>
+    <style>
+       {
+        box-sizing: border-box;
+      }
+      .body {
+        background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/563e9af0-0792-45fc-83fc-a6220dfdaa8e/dd8wr3s-f3b251ed-e997-418e-af99-52c4509d18fb.png/v1/fill/w_1109,h_721,strp/simple_beach_background_by_solarsbases_dd8wr3s-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTMwMCIsInBhdGgiOiJcL2ZcLzU2M2U5YWYwLTA3OTItNDVmYy04M2ZjLWE2MjIwZGZkYWE4ZVwvZGQ4d3Izcy1mM2IyNTFlZC1lOTk3LTQxOGUtYWY5OS01MmM0NTA5ZDE4ZmIucG5nIiwid2lkdGgiOiI8PTIwMDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.iSKvOOgMt4-3Yd_Btkn7aJsYtOahU4PldmrioxldKE0");
+      }
+
+      /* Button used to open the chat form - fixed at the bottom of the page */
+      .open-button {
+        background-color: #555;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: fixed;
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+      }
+
+      /* The popup chat - hidden by default */
+      .form-popup {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+      }
+
+      /* Add styles to the form container */
+      .form-container {
+        max-width: 350px;
+        background-color: white;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 30px;
+        padding-top: 10px;
+        padding-right: 30px;
+
+        border-radius: 10px;
+      }
+
+      /* Full-width textarea */
+      .form-container textarea {
+        width: 90%;
+        padding: 15px;
+
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+        resize: none;
+        min-height: 50px;
+      }
+
+      /* When the textarea gets focus, do something */
+      .form-container textarea:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+
+      /* Set a style for the submit/login button */
+      .form-container .btn {
+        background-color: #04aa6d;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 10px;
+        opacity: 0.8;
+      }
+
+      /* Add a red background color to the cancel button */
+      .form-container .cancel {
+        background-color: red;
+      }
+
+      /* Add some hover effects to buttons */
+      .form-container .btn:hover,
+      .open-button:hover {
+        opacity: 1;
+      }
+      .chat-popup {
+        margin: 0, auto, 0, auto;
+      }
+      .user {
+        background-color: red;
+      }
+      .box1 {
+        width: 300px;
+        margin: 20px auto;
+        background: #686767;
+        padding: 20px;
+        text-align: center;
+        font-weight: 900;
+        color: #fff;
+        font-family: arial;
+        position: relative;
+      }
+      .box2 {
+        width: 300px;
+        margin: 20px auto;
+        background: #f9c764;
+        padding: 20px;
+        text-align: center;
+        font-weight: 900;
+        color: #fff;
+        font-family: arial;
+        position: relative;
+      }
+      .sb1:before {
+        content: "";
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        border-left: 10px solid #686767;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #686767;
+        border-bottom: 10px solid transparent;
+        right: -19px;
+        top: 6px;
+      }
+      .sb2:before {
+        content: "";
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        border-left: 10px solid transparent;
+        border-right: 10px solid #f9c764;
+        border-top: 10px solid #f9c764;
+        border-bottom: 10px solid transparent;
+        left: -19px;
+        top: 6px;
+      }
+    </style>
+  </head>
+  <body style="background-color: rgba(63, 183, 171, 255)">
+    <div class="chat-popup" id="myForm">
+      <img
+        src="https://capacity.com/wp-content/uploads/2019/08/chatbot-4071274_1920.jpg"
+        alt=""
+        style="width: 200px"
+      />
+      <form action="/chat" class="form-container">
+        <h1 style="text-align: center">Chat</h1>
+        {% for key,value in d.items %}
+        <!-- <div class="user">
+          <h3>user:{{key}}</h3>
+          
+        </div> -->
+        <div class="box1 sb1">User:&nbsp;{{key}}</div>
+        <div class="box2 sb2">Chatbot:&nbsp;{{value}}</div>
+        <!-- <h3>chabot:{{value}}</h3> -->
+
+        {% endfor %}
+
+        <label for="msg"><b>Message</b></label>
+        <textarea placeholder="Type message.." name="inp" required></textarea>
+
+        <button type="submit" class="btn">Send</button>
+      </form>
+      <h1>{{message}}</h1>
+    </div>
+  </body>
+</html>

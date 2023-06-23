@@ -1,0 +1,133 @@
+{
+  "intents": [
+    {
+      "tag": "disabled",
+      "patterns": [
+        "how can disabled be benefited by website",
+        "What are the advantages of a website for disabled people?",
+        "What are the perks of a website for disabled individuals?",
+        "What are the features of a website for crippled individuals?",
+        "How are the main advantages of a website for disabled individuals?",
+        "How is the website helping disabled",
+        "In what way is the website helping disabled",
+        "Is the website able to help the crippled",
+        "Disabled people are helped through the website by what means",
+        "In what ways does the website assist disabled people?"
+      ],
+      "responses": [
+        "The facility to book wheelchairs while booking tickets to the monument can help the visitors plan the visit without any hassle"
+      ]
+    },
+    {
+      "tag": "Greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "Is anyone there?",
+        "Hello",
+        "Greetings",
+        "Good morning",
+        "Hola!",
+        " Good Evening",
+        "Hello Bot",
+        "How you doing?",
+        "What’s up",
+        "Good Afternoon"
+      ],
+      "responses": [
+        "Hello",
+        "Hi",
+        "Hi there",
+        " Hey, how can I help you?"
+      ]
+    },
+    {
+      "tag": "Goodbye_Thanks",
+      "patterns": [
+        "Bye",
+        "See you later",
+        "Goodbye",
+        "Goodnight",
+        "Thank You",
+        "Thanks",
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "Thanks for the help",
+        "Thank you for helping out",
+        "Your help is much appreciated",
+        " You are so kind",
+        "You are very helpful",
+        "Aren’t you a peach",
+        "Wonderful Bot",
+        "Gracias",
+        "Appreciated your help"
+      ],
+      "responses": [
+        "See you later",
+        "Have a nice day",
+        "Bye! Come back again",
+        "Happy to help!",
+        "Any time!",
+        "My pleasure",
+        "You're most welcome!"
+      ]
+    },
+    {
+      "tag": "ticket",
+      "patterns": [
+        "Where can I purchase the ticket",
+        "How can I buy the ticket",
+        "What are the steps to book ticket",
+        "What are ways to book ticket",
+        "What are the steps for purchasing a ticket?",
+        "What are all the steps for paying for a ticket?",
+        "What are the various methods for purchasing tickets?",
+        "What are the various methods for booking for monument",
+        "How can I purchase a ticket?"
+      ],
+      "responses": [
+        "To book tickets you have to go to website select the required city and monument fill a form which will redirect you to payment portal after payment qr code will be sent to your mail id"
+      ]
+    },
+    {
+      "tag": "payment",
+      "patterns": [
+        "What are the methods for payment ",
+        "How can the payment be made",
+        "How to make the payment",
+        "How to do the payment",
+        "What are the options for payment?",
+        "What are the ways for payment?",
+        "Tell me all the option available for payment",
+        "Tell me about all the payment options.",
+        "Tell me about all of the methods of payment.",
+        "How do I make a payment?"
+      ],
+      "responses": [
+        "You can pay with any nationalised or private bank credit card, or you can use paytm or google pay to pay with your upi."
+      ]
+    },
+    {
+      "tag": "qr",
+      "patterns": [
+        "What should be done with the qr code",
+        "What is qr code used for?",
+        "Qr code will be used to ?",
+        "What will the QR code be used for?",
+        "Where to show the qr code at the monument",
+        "Where should the QR code be displayed at the monument?",
+        "What should the qr code be used on the?",
+        "what to do with the qr code",
+        "where will qr code be scanned",
+        "How to use the qr code"
+      ],
+      "responses": [
+        "\r\n QR code will be scanned at the monument entry gate and status of verification will be displayed on the lcd "
+      ],
+      "context": [
+        ""
+      ]
+    }
+  ]
+}
